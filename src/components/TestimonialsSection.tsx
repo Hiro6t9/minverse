@@ -37,6 +37,7 @@ export default function TestimonialsSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Don't remove the animation class when leaving viewport
             entry.target.classList.add("animate-fade-in");
           }
         });
@@ -44,21 +45,21 @@ export default function TestimonialsSection() {
       { threshold: 0.1 }
     );
 
-    const testimonials = document.querySelectorAll(".testimonial-card");
-    testimonials.forEach((testimonial) => {
+    const testimonialCards = document.querySelectorAll(".testimonial-card");
+    testimonialCards.forEach((testimonial) => {
       observer.observe(testimonial);
     });
 
     return () => {
-      testimonials.forEach((testimonial) => {
+      testimonialCards.forEach((testimonial) => {
         observer.unobserve(testimonial);
       });
     };
   }, []);
 
   return (
-    <section id="testimonials" ref={sectionRef} className="section-container bg-muted/20">
-      <h2 className="section-title">Player Testimonials</h2>
+    <section id="testimonials" ref={sectionRef} className="section-container bg-cyan-50 dark:bg-cyan-900/20">
+      <h2 className="section-title text-primary">Player Testimonials</h2>
       <p className="section-subtitle">
         See what our community has to say about their Minverse experience
       </p>
@@ -67,20 +68,20 @@ export default function TestimonialsSection() {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="testimonial-card opacity-0"
-            style={{ animationDelay: `${index * 150}ms` }}
+            className="testimonial-card opacity-0 bg-white dark:bg-slate-800/70 border-cyan-100 dark:border-cyan-500/20"
+            style={{ animationDelay: `${index * 100}ms`, animationFillMode: "forwards" }}
           >
             <div className="flex flex-col items-center">
               <img
                 src={testimonial.avatar}
                 alt={testimonial.name}
-                className="w-16 h-16 rounded-full mb-4 object-cover"
+                className="w-16 h-16 rounded-full mb-4 object-cover border-2 border-primary"
               />
               <p className="text-muted-foreground italic mb-4 text-center">
                 "{testimonial.text}"
               </p>
               <div className="mt-auto">
-                <h4 className="font-semibold">{testimonial.name}</h4>
+                <h4 className="font-semibold text-primary">{testimonial.name}</h4>
                 <p className="text-sm text-muted-foreground">{testimonial.role}</p>
               </div>
             </div>
