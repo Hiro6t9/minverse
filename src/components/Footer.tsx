@@ -1,5 +1,6 @@
 
-import { Youtube, MessageSquare, Copy } from "lucide-react";
+import { Youtube, MessageSquare, Copy, Store, ExternalLink } from "lucide-react";
+import { Button } from "./ui/button";
 
 interface FooterProps {
   copyServerIP: () => void;
@@ -73,6 +74,49 @@ export default function Footer({ copyServerIP }: FooterProps) {
                 >
                   <Youtube size={24} />
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Modern Three-Line Section with Buttons */}
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="glass-card p-8 rounded-xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              {/* Join Now Line */}
+              <div className="flex flex-col items-center justify-center">
+                <h3 className="text-xl font-bold mb-4">Ready to Play?</h3>
+                <Button 
+                  className="minecraft-btn w-full max-w-xs bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400"
+                  onClick={copyServerIP}
+                >
+                  <ExternalLink size={18} />
+                  Join Now
+                </Button>
+              </div>
+              
+              {/* Discord Line */}
+              <div className="flex flex-col items-center justify-center">
+                <h3 className="text-xl font-bold mb-4">Join Our Community</h3>
+                <Button 
+                  className="w-full max-w-xs bg-[#5865F2] hover:bg-[#4a55e3]"
+                  onClick={() => window.open('https://discord.gg/minverse', '_blank')}
+                >
+                  <MessageSquare size={18} />
+                  Discord
+                </Button>
+              </div>
+              
+              {/* Store Line */}
+              <div className="flex flex-col items-center justify-center">
+                <h3 className="text-xl font-bold mb-4">Support The Server</h3>
+                <Button 
+                  className="w-full max-w-xs bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400"
+                  onClick={() => window.open('https://store.minverse.fun', '_blank')}
+                >
+                  <Store size={18} />
+                  Store
+                </Button>
               </div>
             </div>
           </div>
