@@ -1,5 +1,5 @@
 
-import { Youtube, MessageSquare, Copy, Store, ExternalLink, Home, GamepadIcon, ArrowRight } from "lucide-react";
+import { Youtube, MessageSquare, Copy, Store, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface FooterProps {
@@ -22,46 +22,26 @@ export default function Footer({ copyServerIP }: FooterProps) {
             </p>
           </div>
 
-          {/* Quick Links - Now with Modern Buttons */}
-          <div className="flex flex-col justify-center">
+          {/* Quick Links */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <div className="space-y-3">
-              <Button 
-                variant="outline" 
-                className="w-full justify-between bg-gradient-to-r from-purple-500/10 to-indigo-500/10 hover:from-purple-500/20 hover:to-indigo-500/20 border-purple-500/20"
-                onClick={() => window.location.href = "#"}
-              >
-                <span className="flex items-center gap-2">
-                  <Home size={16} />
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   Home
-                </span>
-                <ArrowRight size={16} />
-              </Button>
-              
-              <Button 
-                variant="outline"
-                className="w-full justify-between bg-gradient-to-r from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20 border-blue-500/20"
-                onClick={() => window.location.href = "#game-modes"}
-              >
-                <span className="flex items-center gap-2">
-                  <GamepadIcon size={16} />
+                </a>
+              </li>
+              <li>
+                <a href="#game-modes" className="text-muted-foreground hover:text-primary transition-colors">
                   Game Modes
-                </span>
-                <ArrowRight size={16} />
-              </Button>
-              
-              <Button 
-                variant="outline"
-                className="w-full justify-between bg-gradient-to-r from-emerald-500/10 to-green-500/10 hover:from-emerald-500/20 hover:to-green-500/20 border-emerald-500/20"
-                onClick={copyServerIP}
-              >
-                <span className="flex items-center gap-2">
-                  <ExternalLink size={16} />
+                </a>
+              </li>
+              <li>
+                <a href="#join" className="text-muted-foreground hover:text-primary transition-colors">
                   Join Now
-                </span>
-                <ArrowRight size={16} />
-              </Button>
-            </div>
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Connect Section */}
