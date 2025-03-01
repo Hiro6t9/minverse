@@ -2,8 +2,13 @@
 import { useEffect, useState } from "react";
 import ServerStatus from "./ServerStatus";
 import { cn } from "@/lib/utils";
+import { Copy } from "lucide-react";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  copyServerIP: () => void;
+}
+
+export default function HeroSection({ copyServerIP }: HeroSectionProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const serverIp = "PLAY.MINVERSE.FUN";
 
@@ -53,20 +58,23 @@ export default function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
-          <button className="minecraft-btn">
-            Join Now
+          <button 
+            className="minecraft-btn group relative overflow-hidden"
+            onClick={copyServerIP}
+          >
+            <span className="relative z-10">Join Now</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           
-          <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm rounded-md px-4 py-2 border border-white/10">
+          <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm rounded-md px-4 py-2 border border-white/10 hover:bg-background/30 transition-colors">
             <span className="font-mono font-bold">{serverIp}</span>
             <button 
-              className="text-xs bg-white/10 hover:bg-white/20 rounded px-2 py-1 transition-colors"
-              onClick={() => {
-                navigator.clipboard.writeText(serverIp);
-                // You could add a toast notification here
-              }}
+              className="text-xs bg-white/10 hover:bg-white/20 rounded px-2 py-1 transition-colors flex items-center gap-1"
+              onClick={copyServerIP}
+              aria-label="Copy server IP"
             >
-              Copy
+              <Copy size={14} />
+              <span>Copy</span>
             </button>
           </div>
         </div>

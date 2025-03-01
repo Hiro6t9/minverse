@@ -4,7 +4,11 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
+interface NavbarProps {
+  copyServerIP: () => void;
+}
+
+export default function Navbar({ copyServerIP }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,7 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "Game Modes", href: "#game-modes" },
-    { name: "Join Now", href: "#join" },
+    { name: "Join Now", href: "#join", onClick: copyServerIP },
   ];
 
   return (
@@ -48,6 +52,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   className="font-medium hover:text-primary transition-colors"
+                  onClick={link.onClick}
                 >
                   {link.name}
                 </a>
@@ -84,7 +89,10 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   className="font-medium hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (link.onClick) link.onClick();
+                  }}
                 >
                   {link.name}
                 </a>
