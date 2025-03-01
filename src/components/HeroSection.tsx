@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const serverIp = "play.minverse.com";
+  const serverIp = "PLAY.MINVERSE.FUN";
 
   useEffect(() => {
     setIsLoaded(true);
@@ -18,10 +18,10 @@ export default function HeroSection() {
         <div 
           className={cn(
             "absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000", 
-            isLoaded ? "opacity-50" : "opacity-0"
+            isLoaded ? "opacity-40" : "opacity-0"
           )}
           style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5')` 
+            backgroundImage: `url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1974&auto=format&fit=crop')` 
           }}
         ></div>
         <div className="absolute inset-0 hero-gradient"></div>
@@ -35,7 +35,7 @@ export default function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
-          Welcome to <span className="text-primary">Minverse</span>
+          Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">MINEVERSE</span>
         </h1>
         
         <p 
@@ -58,7 +58,7 @@ export default function HeroSection() {
           </button>
           
           <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm rounded-md px-4 py-2 border border-white/10">
-            <span className="font-mono">{serverIp}</span>
+            <span className="font-mono font-bold">{serverIp}</span>
             <button 
               className="text-xs bg-white/10 hover:bg-white/20 rounded px-2 py-1 transition-colors"
               onClick={() => {
@@ -85,7 +85,7 @@ export default function HeroSection() {
             isLoaded ? "opacity-100" : "opacity-0"
           )}
         >
-          <a href="#features" className="text-white/80 hover:text-white transition-colors">
+          <a href="#game-modes" className="text-white/80 hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>

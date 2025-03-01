@@ -21,8 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "Features", href: "#features" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Game Modes", href: "#game-modes" },
     { name: "Join Now", href: "#join" },
   ];
 
@@ -37,8 +36,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
-          <div className="h-8 w-8 bg-minecraft-green rounded"></div>
-          <span className="text-xl font-bold">Minverse</span>
+          <div className="h-8 w-8 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded"></div>
+          <span className="text-xl font-bold">MINEVERSE</span>
         </a>
 
         {/* Desktop Menu */}

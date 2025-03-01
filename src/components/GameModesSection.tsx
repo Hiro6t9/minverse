@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Sword, Skull, Bed } from "lucide-react";
+import { Sword, Skull, Bed, Shield, Trophy } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface GameMode {
@@ -18,7 +18,7 @@ export default function GameModesSection() {
     {
       name: "LIFESTEAL",
       description: "In this intense game mode, stealing hearts from enemies is the key to survival. Each kill grants you a heart from your victim.",
-      bgColor: "from-red-500/80 to-red-800/80 dark:from-red-600/50 dark:to-red-900/50",
+      bgColor: "from-rose-500/80 to-red-700/80 dark:from-rose-600/50 dark:to-red-800/50",
       icon: <Skull className="w-12 h-12 text-white" />,
       features: [
         "Lose a heart when you die, gain one when you kill",
@@ -30,7 +30,7 @@ export default function GameModesSection() {
     {
       name: "BEDWARS",
       description: "Protect your bed and destroy others' in this strategic PvP game. Collect resources, upgrade your gear, and conquer the arena.",
-      bgColor: "from-blue-500/80 to-blue-800/80 dark:from-blue-600/50 dark:to-blue-900/50",
+      bgColor: "from-cyan-500/80 to-blue-700/80 dark:from-cyan-600/50 dark:to-blue-800/50",
       icon: <Bed className="w-12 h-12 text-white" />,
       features: [
         "Solo, duo, trio, and squad modes available",
@@ -66,15 +66,15 @@ export default function GameModesSection() {
   }, []);
 
   return (
-    <section id="game-modes" ref={sectionRef} className="section-container bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20">
+    <section id="game-modes" ref={sectionRef} className="section-container bg-gradient-to-br from-cyan-50/50 to-emerald-50/50 dark:from-cyan-900/10 dark:to-emerald-900/10">
       <div className="flex flex-col items-center mb-12">
-        <h2 className="section-title text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+        <h2 className="section-title text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
           Game Modes
         </h2>
         <p className="section-subtitle">
           Experience intense competition and strategic gameplay in our featured game modes
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mt-4"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full mt-4"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
@@ -103,7 +103,7 @@ export default function GameModesSection() {
                   <ul className="space-y-2">
                     {mode.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <Sword className="w-4 h-4 text-white/70 mt-1 mr-2 flex-shrink-0" />
+                        <Shield className="w-4 h-4 text-white/70 mt-1 mr-2 flex-shrink-0" />
                         <span className="text-white/80">{feature}</span>
                       </li>
                     ))}

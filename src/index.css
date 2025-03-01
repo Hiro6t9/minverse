@@ -5,48 +5,48 @@
 
 @layer base {
   :root {
-    --background: 210 50% 98%;
-    --foreground: 222 47% 11%;
+    --background: 176 40% 98%;
+    --foreground: 200 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 200 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 196 100% 47%;
+    --popover-foreground: 200 47% 11%;
+    --primary: 162 85% 47%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 199 89% 48%;
+    --secondary: 174 40% 96.1%;
+    --secondary-foreground: 200 47% 11%;
+    --muted: 174 40% 96.1%;
+    --muted-foreground: 199 16% 47%;
+    --accent: 170 89% 48%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 196 100% 47%;
-    --radius: 0.5rem;
+    --border: 178 32% 91%;
+    --input: 178 32% 91%;
+    --ring: 162 85% 47%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 196 100% 50%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 199 89% 48%;
-    --accent-foreground: 210 40% 98%;
+    --background: 199 47% 6%;
+    --foreground: 182 40% 98%;
+    --card: 199 47% 6%;
+    --card-foreground: 182 40% 98%;
+    --popover: 199 47% 6%;
+    --popover-foreground: 182 40% 98%;
+    --primary: 162 85% 50%;
+    --primary-foreground: 200 47% 11%;
+    --secondary: 201 32% 17%;
+    --secondary-foreground: 182 40% 98%;
+    --muted: 201 32% 17%;
+    --muted-foreground: 193 20% 65%;
+    --accent: 170 89% 48%;
+    --accent-foreground: 182 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 196 100% 50%;
+    --destructive-foreground: 182 40% 98%;
+    --border: 201 32% 17%;
+    --input: 201 32% 17%;
+    --ring: 162 85% 50%;
   }
 }
 
@@ -91,11 +91,11 @@
   }
 
   .hero-gradient {
-    @apply bg-gradient-to-b from-transparent via-background to-background dark:from-transparent dark:via-background/90 dark:to-background;
+    @apply bg-gradient-to-b from-transparent via-background/50 to-background dark:from-transparent dark:via-background/90 dark:to-background;
   }
   
   .minecraft-btn {
-    @apply bg-primary hover:bg-accent text-white font-medium py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-cyan-400 transition-all duration-300 inline-flex items-center justify-center;
   }
   
   .server-status-online {
